@@ -6,11 +6,32 @@
     background-repeat: no-repeat;
 }
 
+.tool-container {
+    @include media-tablet {
+        flex-wrap: wrap;
+        >.tool {
+            flex-basis: 45%;
+        }
+    }
+    @include media-mobile {
+        >.tool {
+            flex-basis: 100%;
+            margin-bottom: 47px;
+        }
+    }
+}
+
 .tools__title {
     max-width: 462px;
     margin: auto;
     text-align: center;
     margin-bottom: 70px;
+}
+
+.tool {
+    @include media-laptop {
+        text-align: center;
+    }
 }
 
 .tool__title {
@@ -24,4 +45,7 @@
 .tools__button {
     margin-top: 60px;
     text-align: center;
+    @include media-mobile {
+        margin-top: 0;
+    }
 }
