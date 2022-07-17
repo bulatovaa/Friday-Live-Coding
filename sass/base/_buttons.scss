@@ -1,32 +1,38 @@
 .button {
     padding: 11px 25px 13px;
-    font-family: "Open Sans", Verdana, sans-serif;
-    font-size: 1.6rem;
-    line-height: 2.2rem;
-    font-weight: 600;
+    @extend %font-primary;
+    @include font($size: 1.6rem, $height: 2.2rem, $weight: 600);
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s;
+    &_bordered {
+        background: $color-light;
+        border: 1px solid $color-border;
+        color: $color-text;
+        &:hover {
+            background: $color-hovered;
+            border-color: $color-hovered;
+        }
+    }
+    &_colored{
+        background: $color-primary;
+        border: 1px solid $color-primary;
+        color: $color-light;
+        &:hover {
+            background: $color-additional;
+            border-color: $color-additional;
+        }
+    }
 }
 
-.button_bordered {
-    background: $color-light;
-    border: 1px solid $color-border;
-    color: $color-text;
+.link-button {
+    color: $color-primary;
+    @extend %font-add;
+    @include font($size: 1.6rem, $height: 2.4rem, $weight: 600);
+    display: inline-flex;
+    align-items: center;
 }
 
-.button_colored {
-    background: $color-primary;
-    border: 1px solid $color-primary;
-    color: $color-light;
-}
-
-.button_colored:hover {
-    background: $color-additional;
-    border-color: $color-additional;
-}
-
-.button_bordered:hover {
-    background: $color-hovered;
-    border-color: $color-hovered;
+.link-button__text {
+    margin-left: 9px;
 }
