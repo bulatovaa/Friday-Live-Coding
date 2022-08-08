@@ -55,7 +55,7 @@
         padding: 10px 21px;
         border-radius: 5px;
         &:focus {
-            border: 1px solid $color-primary;
+            border-color: $color-primary;
             outline: none;
         }
     }
